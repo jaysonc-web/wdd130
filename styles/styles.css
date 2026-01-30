@@ -115,8 +115,3 @@ ul {
     color: var(--box-text);
 
 }
-
-.hero article img {
-    float: right;
-    width: 125px;
-}
