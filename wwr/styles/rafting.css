@@ -1,11 +1,5 @@
-/* =========================
-   WDD130 About Page Styles
-   Header = Grid | Nav = Flex
-   ========================= */
-
 :root {
     --primary: #e8e0ff;
-    /* light purple header/footer */
     --text: #222;
     --bg: #fff;
     --border: #9a9a9a;
@@ -28,7 +22,6 @@ body {
     background: var(--bg);
 }
 
-/* Keep header/main/footer aligned to same width */
 header,
 main,
 footer {
@@ -36,17 +29,14 @@ footer {
     margin: 0 auto;
 }
 
-/* =========================
-   HEADER (CSS GRID required)
-   ========================= */
 header {
     background: var(--primary);
     padding: var(--pad);
 
     display: grid;
-    /* ✅ rubric */
+
     grid-template-columns: 160px 1fr;
-    /* logo | nav */
+
     align-items: center;
     gap: var(--gap);
 }
@@ -57,16 +47,12 @@ header > img {
     display: block;
 }
 
-/* =========================
-   NAV (Flex required)
-   ========================= */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
 
     display: flex;
-    /* ✅ rubric */
     justify-content: end;
     gap: 0.75rem;
     flex-wrap: wrap;
@@ -82,9 +68,6 @@ nav a {
     border-radius: 3px;
 }
 
-/* =========================
-   MAIN layout spacing
-   ========================= */
 main {
     padding: 1.25rem 0 2rem;
 }
@@ -95,10 +78,8 @@ h2 {
     margin: 0 0 0.75rem 0;
 }
 
-/* =========================
-   HERO (wireframe-style)
-   ========================= */
 .hero {
+    position: relative;
     display: grid;
     gap: 0.75rem;
 }
@@ -109,22 +90,21 @@ h2 {
     object-fit: cover;
     display: block;
     border: 2px solid #555;
-    /* similar to wireframe */
+
 }
 
 .hero h1 {
+    position: absolute;
     font-size: 1.7rem;
 }
 
-/* Article block inside hero */
 .hero article {
-    position: relative;
+    position: absolute;
     border: 1px solid var(--border);
     padding: 1rem;
     line-height: 1.5;
 }
 
-/* Small image floated like the wireframe */
 .hero article img {
     width: 160px;
     height: auto;
@@ -133,18 +113,12 @@ h2 {
     border: 1px solid var(--border);
 }
 
-/* Clear float after article */
 .hero article::after {
     content: "";
     display: block;
     clear: both;
 }
 
-/* =========================
-   HISTORY section
-   (Your HTML is stacked paragraphs;
-   this keeps it clean and readable.)
-   ========================= */
 main > section {
     margin-top: 2rem;
 }
@@ -154,9 +128,6 @@ main > section p {
     margin: 0.75rem 0;
 }
 
-/* =========================
-   FOOTER (icons right + horizontal)
-   ========================= */
 footer {
     background: var(--primary);
     padding: var(--pad);
@@ -164,7 +135,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* text left, icons right */
+
     gap: var(--gap);
 }
 
@@ -172,7 +143,6 @@ footer p {
     margin: 0;
 }
 
-/* ✅ rubric: icons right and horizontal */
 .socialmedia {
     display: flex;
     gap: 0.75rem;
@@ -186,9 +156,6 @@ footer p {
     display: block;
 }
 
-/* =========================
-   Responsive tweaks
-   ========================= */
 @media (max-width: 700px) {
     header {
         grid-template-columns: 1fr;
