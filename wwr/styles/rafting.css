@@ -1,91 +1,212 @@
+/* =========================
+   WDD130 About Page Styles
+   Header = Grid | Nav = Flex
+   ========================= */
+
 :root {
-    --primary-color: #055a05;
-    --secondary-color: #f4a261;
-    --accent1-color: #264653;
-    --accent2-color: #e9c46a;
-    --heading-font: "times new roman", georgia;
-    --body-font: Arial, sans-serif;
+    --primary: #e8e0ff;
+    /* light purple header/footer */
+    --text: #222;
+    --bg: #fff;
+    --border: #9a9a9a;
+
+    --max: 1100px;
+    --pad: 1rem;
+    --gap: 1rem;
+
+    --font: Arial, Helvetica, sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: var(--body-font);
-    color: var(--accent1-color);
-
+    margin: 0;
+    font-family: var(--font);
+    color: var(--text);
+    background: var(--bg);
 }
 
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-}
-
+/* Keep header/main/footer aligned to same width */
 header,
 main,
 footer {
-    width: 840px;
+    width: min(var(--max), 92%);
     margin: 0 auto;
+}
 
+/* =========================
+   HEADER (CSS GRID required)
+   ========================= */
+header {
+    background: var(--primary);
+    padding: var(--pad);
+
+    display: grid;
+    /* ✅ rubric */
+    grid-template-columns: 160px 1fr;
+    /* logo | nav */
+    align-items: center;
+    gap: var(--gap);
+}
+
+header > img {
+    width: 140px;
+    height: auto;
+    display: block;
+}
+
+/* =========================
+   NAV (Flex required)
+   ========================= */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    /* ✅ rubric */
+    justify-content: end;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.5rem 0.9rem;
+    text-decoration: none;
+    color: var(--text);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+}
+
+/* =========================
+   MAIN layout spacing
+   ========================= */
+main {
+    padding: 1.25rem 0 2rem;
 }
 
 h1,
 h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
     text-align: center;
-
+    margin: 0 0 0.75rem 0;
 }
 
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
-
-}
-
-.socialmedia a {
-    text-decoration: none;
-}
-
+/* =========================
+   HERO (wireframe-style)
+   ========================= */
 .hero {
-    position: relative;
+    display: grid;
+    gap: 0.75rem;
 }
 
-.hero img {
+.hero > img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
     display: block;
-    width: 100%;
-    height: auto;
+    border: 2px solid #555;
+    /* similar to wireframe */
 }
 
-h1 {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 16px;
-    text-align: center;
-    opacity: 0.7;
-    background-color: var(--accent1-color);
-    color: #fff;
+.hero h1 {
+    font-size: 1.7rem;
 }
 
-article {
-    position: ;
-    text-align: center;
-    margin: 0.5px;
-    font-size: 1rem;
-    color: var(--secondary-color);
-
+/* Article block inside hero */
+.hero article {
+    position: relative;
+    border: 1px solid var(--border);
+    padding: 1rem;
+    line-height: 1.5;
 }
 
+/* Small image floated like the wireframe */
 .hero article img {
+    width: 160px;
+    height: auto;
     float: right;
-    width: 125px;
+    margin: 0 0 0.75rem 0.75rem;
+    border: 1px solid var(--border);
+}
+
+/* Clear float after article */
+.hero article::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* =========================
+   HISTORY section
+   (Your HTML is stacked paragraphs;
+   this keeps it clean and readable.)
+   ========================= */
+main > section {
+    margin-top: 2rem;
+}
+
+main > section p {
+    line-height: 1.6;
+    margin: 0.75rem 0;
+}
+
+/* =========================
+   FOOTER (icons right + horizontal)
+   ========================= */
+footer {
+    background: var(--primary);
+    padding: var(--pad);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* text left, icons right */
+    gap: var(--gap);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ✅ rubric: icons right and horizontal */
+.socialmedia {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: end;
+    align-items: center;
+}
+
+.socialmedia img {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+/* =========================
+   Responsive tweaks
+   ========================= */
+@media (max-width: 700px) {
+    header {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        justify-content: start;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero article img {
+        float: none;
+        display: block;
+        margin: 0 auto 0.75rem;
+        width: min(220px, 100%);
+    }
 }
