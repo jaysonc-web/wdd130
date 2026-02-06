@@ -99,38 +99,43 @@
                     <fieldset class="field">
                         <legend>Purpose of Message</legend>
 
-                        <label class="radio">
-                            <input type="radio" name="purpose" value="general" required>
+                        <label for="purpose-general">
+                            <input type="radio" id="purpose-general" name="purpose" value="general"
+                              required>
                             General Inquiry
                         </label>
 
-                        <label class="radio">
-                            <input type="radio" name="purpose" value="reservation">
+                        <label for="purpose-reservation">
+                            <input type="radio" id="purpose-reservation" name="purpose"
+                              value="reservation">
                             Reservation Question
                         </label>
 
-                        <label class="radio">
-                            <input type="radio" name="purpose" value="suggestion">
+                        <label for="purpose-suggestion">
+                            <input type="radio" id="purpose-suggestion" name="purpose"
+                              value="suggestion">
                             Website Suggestion
                         </label>
                     </fieldset>
 
+                    <!-- Message -->
                     <div class="field">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
 
-                    <label class="checkbox">
-                        <input type="checkbox" name="newsletter" value="yes">
+
+                    <label for="newsletter">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
                         Please subscribe me to the monthly newsletter
                     </label>
 
+                    <!-- Submit button -->
                     <button type="submit">Send Message</button>
                 </form>
             </section>
 
         </section>
-    </main>
     </main>
 
 
@@ -142,10 +147,10 @@
                 <img src="images/images.png" alt="Facebook">
             </a>
             <a href="https://www.instagram.com">
-                <img src="images/Instagram_logo_2022.svg" alt="Instagram">
+                <img src="images/intagram.svg" alt="Instagram">
             </a>
             <a href="https://www.linkedin.com">
-                <img src="images/LinkedIn_icon.svg.png" alt="LinkedIn">
+                <img src="images/link.svg.png" alt="LinkedIn">
             </a>
         </nav>
     </footer>
