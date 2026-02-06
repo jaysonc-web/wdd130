@@ -177,3 +177,112 @@ footer p {
         width: min(220px, 100%);
     }
 }
+
+/* CONTACT PAGE */
+.contact-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 850px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+
+    .contact-form-card {
+        grid-column: 1 / -1;
+    }
+}
+
+.contact-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1.25rem;
+    color: #222;
+}
+
+.map-wrap {
+    margin-top: 1rem;
+}
+
+.map-wrap iframe {
+    width: 100%;
+    height: 240px;
+    border: 0;
+    /* styled in CSS, not inline */
+    border-radius: 8px;
+}
+
+.employee-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 520px) {
+    .employee-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.employee img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.employee figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+fieldset.field {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 0.75rem;
+}
+
+.radio,
+.checkbox {
+    display: block;
+    margin-top: 0.4rem;
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    background: #0b2aa8;
+    color: #fff;
+}
