@@ -387,3 +387,17 @@ thead th {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+.hero {
+    position: relative;
+    color: white;
+    /* makes text white */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    /* dark overlay */
+}
